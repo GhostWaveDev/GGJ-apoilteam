@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="wall" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [  ]
+}
+
+[node name="sprite" type="Sprite" parent="."]
+
+[node name="staticBody2D" type="StaticBody2D" parent="."]
+constant_linear_velocity = Vector2( 90, 60 )
+
+[node name="collisionShape2D" type="CollisionShape2D" parent="staticBody2D"]
+shape = SubResource( 1 )
