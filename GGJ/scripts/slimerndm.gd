@@ -6,7 +6,6 @@ var jumpTime = 0
 export var jumpAccel = Vector2(900, 900)
 var jumpFriction = 0.9
 var theta
-
 var dir = Vector2.ZERO
 
 func _physics_process(delta):
@@ -24,9 +23,7 @@ func _physics_process(delta):
 	
 	speed *= jumpFriction
 	move_and_slide(speed)
-	
 	update()
-
 
 func _draw():
 	draw_rect(Rect2(0,0, 10, 10), Color.red)

@@ -28,9 +28,7 @@ func _process(delta):
 				a.position = self.global_position + (b*-100)
 				a.speed = Vector2(bulletSpeed, bulletSpeed) * -b 
 				
-				a.emittor = Player
-				
-				a.bulletList.append(a)
+				a.alliance = "good"
 			
 			if current == 1:
 				var a1 = bullet.instance()
@@ -45,9 +43,10 @@ func _process(delta):
 				a2.position = self.global_position + (b*-140)
 				a1.timelife = 0.1
 				a2.timelife = 0.1
-				a1.emittor = Player
-				a2.emittor = Player
-				
+				a1.alliance = "good"
+				a2.alliance = "good"
+				a1.damage = 15
+				a2.damage = 15
 			
 			cooldown_counter = 0
 		

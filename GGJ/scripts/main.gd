@@ -1,5 +1,7 @@
 extends Node2D
 
+var bulletList = []
+
 export var generatorPath = "res://"
 onready var generatorScene = load(generatorPath)
 var generator
