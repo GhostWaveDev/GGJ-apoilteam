@@ -22,3 +22,4 @@ func _on_hitbox_body_entered(body):
 	if !(body is emittor):
 		body.Collision(self)
 		self.speed = Vector2.ZERO
+		$hitbox.queue_free()

@@ -3,6 +3,8 @@ extends Enemy
 var compt = 0
 var jumpCooldown = 2
 var jumpTime = 0
+export var jumpAccel = Vector2(900, 900)
+var jumpFriction = 0.9
 var theta
 
 var dir = Vector2.ZERO
@@ -17,7 +19,11 @@ func _physics_process(delta):
 	
 	if jumpTime > 0:
 		jumpTime -= delta
-		move_and_slide(Vector2(40 * cos(theta), 40 * sin(theta)))
+		
+		speed += delta * jumpAccel * Vector2(cos(theta), sin(theta))
+	
+	speed *= jumpFriction
+	move_and_slide(speed)
 	
 	update()
 
