@@ -47,7 +47,8 @@ func _process(delta):
 				a2.timelife = 0.1
 				a1.emittor = Player
 				a2.emittor = Player
-				
+				a1.damage = 15
+				a2.damage = 15
 			
 			cooldown_counter = 0
 		

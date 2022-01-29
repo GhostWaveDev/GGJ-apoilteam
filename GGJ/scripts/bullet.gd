@@ -7,6 +7,8 @@ var timelife = -1
 var timealive = 0
 var emittor
 
+var damage = 10
+
 func _draw():
 	draw_rect(Rect2(0, 0, 10, 10), Color(255, 0, 0))
 

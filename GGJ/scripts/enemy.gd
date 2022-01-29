@@ -1,10 +1,11 @@
 extends Actor
 class_name Enemy
 
-var speed = Vector2.ZERO
-var angle = 0
-var knockback = 400
+var state = 0
 
-func Collision(obj):
-	var dir = (obj.global_position - self.global_position)/abs(obj.global_position.distance_to(self.global_position))
-	self.speed += -dir * Vector2(knockback, knockback) 
+func _ready():
+	var damage = 50
+
+func _on_hitbox_body_entered(body):
+	if !(body == self):
+		body.Collision(self)
