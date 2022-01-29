@@ -8,4 +8,7 @@
 [node name="player" parent="." instance=ExtResource( 1 )]
 
 [node name="wall" parent="." instance=ExtResource( 2 )]
-position = Vector2( 97, 22 )
+position = Vector2( 246, 78 )
+
+[node name="wall2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 246, 114 )
