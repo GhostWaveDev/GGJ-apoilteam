@@ -1,15 +1,13 @@
 [gd_scene load_steps=2 format=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 20, 20 )
 
-[node name="wall" type="Node2D"]
-__meta__ = {
-"_edit_horizontal_guides_": [  ]
-}
+[node name="wall" type="StaticBody2D"]
 
 [node name="sprite" type="Sprite" parent="."]
 
 [node name="staticBody2D" type="Area2D" parent="."]
 
-[node name="collisionShape2D" type="CollisionShape2D" parent="staticBody2D"]
+[node name="collisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
