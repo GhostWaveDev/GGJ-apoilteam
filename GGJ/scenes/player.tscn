@@ -18,10 +18,10 @@
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "down",
-"speed": 20.0
+"name": "left",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -30,7 +30,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "left",
+"name": "up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
@@ -38,10 +38,10 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
-"name": "up",
-"speed": 5.0
+"name": "down",
+"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
