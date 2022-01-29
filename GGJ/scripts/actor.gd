@@ -1,4 +1,5 @@
 extends Node2D
+class_name Actor
 
 var health
 onready var sprite = $animatedSprite
@@ -12,3 +13,6 @@ func ChangeWorld() :
 	
 func TakeDamage(damage):
 	health -= damage
+
+func Collision(obj):
+	pass

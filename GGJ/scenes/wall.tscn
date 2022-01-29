@@ -9,8 +9,7 @@ __meta__ = {
 
 [node name="sprite" type="Sprite" parent="."]
 
-[node name="staticBody2D" type="StaticBody2D" parent="."]
-constant_linear_velocity = Vector2( 90, 60 )
+[node name="staticBody2D" type="Area2D" parent="."]
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="staticBody2D"]
 shape = SubResource( 1 )

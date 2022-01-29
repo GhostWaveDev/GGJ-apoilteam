@@ -29,5 +29,10 @@ func _process(delta):
 	speed *= friction
 	update()
 
+
 func _draw():
 	draw_rect(Rect2(0,0, 10, 10), Color.red)
+	
+func Collision(obj):
+	speed = Vector2.ZERO
+	position.x = obj.position.x
