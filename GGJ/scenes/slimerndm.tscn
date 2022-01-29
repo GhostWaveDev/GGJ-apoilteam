@@ -17,6 +17,8 @@ extents = Vector2( 30, 30 )
 
 [node name="slimerndm" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
+health = 35
+damage = 10
 
 [node name="animatedSprite" parent="." index="0"]
 scale = Vector2( 0.5, 0.5 )
