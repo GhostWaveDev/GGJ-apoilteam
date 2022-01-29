@@ -1,29 +1,23 @@
 extends Actor
 
+class_name Player
+
 var speed = Vector2.ZERO
 export var accel = Vector2(400,400)
 var input = Vector2.ZERO
 export var friction = Vector2(0.92,0.92)
 
 func _physics_process(delta):
-	if Input.is_action_just_pressed("upDirec") :
-		input.y = -1
-	if Input.is_action_just_pressed("downDirec") :
-		input.y = 1
-	if Input.is_action_just_pressed("leftDirec") :
-		input.x = -1
-	if Input.is_action_just_pressed("rightDirec") :
-		input.x = 1
-		
-	if Input.is_action_just_released("upDirec") :
-		input.y = 0
-	if Input.is_action_just_released("downDirec") :
-		input.y = 0
-	if Input.is_action_just_released("leftDirec") :
-		input.x = 0
-	if Input.is_action_just_released("rightDirec") :
-		input.x = 0
-		
+	input = Vector2.ZERO
+	if Input.is_action_pressed("upDirec") :
+		input.y += -1
+	if Input.is_action_pressed("downDirec") :
+		input.y += 1
+	if Input.is_action_pressed("leftDirec") :
+		input.x += -1
+	if Input.is_action_pressed("rightDirec") :
+		input.x += 1
+	
 	speed += accel * delta * input
 	speed *= friction
 	self.move_and_collide(speed * delta)
