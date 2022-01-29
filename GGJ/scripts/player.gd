@@ -3,9 +3,9 @@ extends Actor
 var speed = Vector2.ZERO
 export var accel = Vector2(400,400)
 var input = Vector2.ZERO
-export var friction = Vector2(0.9,0.9)
+export var friction = Vector2(0.92,0.92)
 
-func _process(delta):
+func _physics_process(delta):
 	if Input.is_action_just_pressed("upDirec") :
 		input.y = -1
 	if Input.is_action_just_pressed("downDirec") :
@@ -25,14 +25,9 @@ func _process(delta):
 		input.x = 0
 		
 	speed += accel * delta * input
-	position += speed * delta
 	speed *= friction
+	self.move_and_collide(speed * delta)
 	update()
-
 
 func _draw():
 	draw_rect(Rect2(0,0, 10, 10), Color.red)
-	
-func Collision(obj):
-	speed = Vector2.ZERO
-	position.x = obj.position.x
