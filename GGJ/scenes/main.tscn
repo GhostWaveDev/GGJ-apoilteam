@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/levelGenerator.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scripts/main.gd" type="Script" id=3]
 [ext_resource path="res://scenes/slimerndm.tscn" type="PackedScene" id=4]
 
@@ -13,3 +14,9 @@ position = Vector2( 442, 332 )
 
 [node name="slimerndm" parent="." instance=ExtResource( 4 )]
 position = Vector2( 721, 386 )
+knockback = 400
+
+[node name="levelGenerator" parent="." instance=ExtResource( 2 )]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2( 960, 540 )
