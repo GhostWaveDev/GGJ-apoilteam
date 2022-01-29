@@ -2,8 +2,8 @@ extends Node2D
 
 class_name LevelGenerator
 
-var screenW = OS.get_real_window_size().x
-var screenH = OS.get_real_window_size().y
+var screenW = 1920
+var screenH = 1080
 var spritesInRow = 0
 var spritesInCol = 0
 var i = 0
@@ -26,21 +26,22 @@ func _ready():
 	wallSize *= 2
 	spritesInRow = int(screenW / wallSize.x)
 	spritesInCol = int(screenH / wallSize.y) 
-	print(spritesInRow)
-	print(spritesInCol)
+#	print(spritesInRow)
+#	print(spritesInCol)
 	
 func _process(delta):
-	if Input.is_action_just_pressed("draw") :
-		mousePos = get_global_mouse_position()
-		ChangeObjOnClick(mousePos, 1)
-		
-	if Input.is_action_just_pressed("remove") :
-		mousePos = get_global_mouse_position()
-		ChangeObjOnClick(mousePos, 0)
-		
-	if Input.is_action_just_pressed("slime") :
-		mousePos = get_global_mouse_position()
-		ChangeObjOnClick(mousePos, 2)
+	if len(gridList) >0:
+		if Input.is_action_just_pressed("draw") :
+			mousePos = get_global_mouse_position()
+			ChangeObjOnClick(mousePos, 1)
+			
+		if Input.is_action_just_pressed("remove") :
+			mousePos = get_global_mouse_position()
+			ChangeObjOnClick(mousePos, 0)
+			
+		if Input.is_action_just_pressed("slime") :
+			mousePos = get_global_mouse_position()
+			ChangeObjOnClick(mousePos, 2)
 
 func Generate():
 #	for count in range(spritesInCol * spritesInRow):
@@ -57,7 +58,7 @@ func Generate():
 		var row = []
 		var rowObj = []
 		for j in range(spritesInRow):
-			if i == 0 or j == 0 or i == spritesInCol-1 or j == spritesInRow-1:
+			if i == 0 or j <= 3 or i >= spritesInCol-2 or j >= spritesInRow-4:
 				rowObj.append(InstiateWall(Vector2(j * wallSize.x, i * wallSize.y) + wallSize/2))
 				row.append(1)
 			else:
@@ -67,21 +68,19 @@ func Generate():
 		gridList.append(row)
 		objList.append(rowObj)
 
-
 func ChangeObjOnClick (pos, mode):
 	i = int(pos.x / wallSize.x)
 	j = int(pos.y / wallSize.y)
 	
 	var objPos = Vector2(i * wallSize.x, j * wallSize.y) + wallSize/2
-	
 	if gridList[j][i] != 1 and mode == 1:
 		objList[j][i] = InstiateWall(objPos)
 		gridList[j][i] = 1
-	
+
 	elif gridList[j][i] == 0 and mode == 2 :
 		objList[j][i] = InstiateSlime(objPos)
 		gridList[j][i] = 2
-	
+
 	elif gridList[j][i] != 0 and mode == 0 :
 		gridList[j][i] = 0
 		objList[j][i].queue_free()
