@@ -6,6 +6,7 @@ var jumpTime = 0
 export var jumpAccel = Vector2(900, 900)
 var jumpFriction = 0.9
 var theta
+
 var dir = Vector2.ZERO
 
 func _physics_process(delta):

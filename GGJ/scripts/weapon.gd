@@ -30,7 +30,7 @@ func _process(delta):
 				
 				a.emittor = Player
 				
-				get_parent().get_parent().bulletList.append(a)
+				a.bulletList.append(a)
 			
 			if current == 1:
 				var a1 = bullet.instance()
@@ -47,8 +47,7 @@ func _process(delta):
 				a2.timelife = 0.1
 				a1.emittor = Player
 				a2.emittor = Player
-				a1.damage = 15
-				a2.damage = 15
+				
 			
 			cooldown_counter = 0
 		
