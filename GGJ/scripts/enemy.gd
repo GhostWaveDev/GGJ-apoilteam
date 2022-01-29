@@ -3,6 +3,10 @@ class_name Enemy
 
 var state = 0
 
+func Die(): 
+	get_parent().nbEnemy -= 1
+	queue_free()
+
 func _ready():
 	var damage = 50
 
