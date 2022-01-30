@@ -23,6 +23,8 @@ var wallSize = Vector2(20, 20)
 var gridList = []
 var mapList = {}
 
+var objList = []
+
 func _ready():
 	wallSize *= 2
 	spritesInRow = int(screenW / wallSize.x)
@@ -30,6 +32,14 @@ func _ready():
 	loadLevels()
 
 func Generate(level_name):
+	
+	for a in objList:
+		if is_instance_valid(a):
+			a.queue_free()
+	
+	gridList = []
+	objList = []
+	
 	gridList = normalizeGrid(mapList[level_name])
 	
 	for j in range(spritesInCol):
@@ -44,20 +54,24 @@ func InstiateWall (pos):
 	var a = wall.instance()
 	a.position = pos
 	a.size = wallSize
-	get_parent().add_child(a)
+	call_deferred("add_child_fast", a)
 	
+	objList.append(a)
 	return a
+
+func add_child_fast(a):
+	get_parent().add_child(a)
 
 func InstiateSlime (pos, type):
 	var a = slimes[type - 2].instance()
 	a.position = pos
-	get_parent().add_child(a)
+	call_deferred("add_child_fast", a)
 	get_parent().nbEnemy += 1
 	
 	if type - 2 == 1:
 		 a.playerPath = "../player"
 		 a._ready()
-	
+	objList.append(a)
 	return a
 
 func loadLevels():

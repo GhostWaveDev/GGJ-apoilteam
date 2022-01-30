@@ -13,14 +13,16 @@ func _ready():
 
 func _physics_process(delta):
 	input = Vector2.ZERO
-	if Input.is_action_pressed("upDirec") :
-		input.y += -1
-	if Input.is_action_pressed("downDirec") :
-		input.y += 1
-	if Input.is_action_pressed("leftDirec") :
-		input.x += -1
-	if Input.is_action_pressed("rightDirec") :
-		input.x += 1
+	
+	if !get_parent().fade_out:
+		if Input.is_action_pressed("upDirec") :
+			input.y += -1
+		if Input.is_action_pressed("downDirec") :
+			input.y += 1
+		if Input.is_action_pressed("leftDirec") :
+			input.x += -1
+		if Input.is_action_pressed("rightDirec") :
+			input.x += 1
 	
 	# ANIMATION
 	if input.y < 0:

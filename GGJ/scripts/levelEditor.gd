@@ -58,6 +58,13 @@ func Generate(level_name):
 #		else:
 #			gridList.append(0)
 	
+	for a in objList:
+		for b in a:
+			b.queue_free()
+	
+	gridList = []
+	objList = []
+	
 	for i in range(spritesInCol):
 		var row = []
 		var rowObj = []
