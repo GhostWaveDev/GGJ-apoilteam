@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/arc degainage.mp3-e04e6cae7c46d11116d8dda7b89cfbb6.mp3str"
+
+[deps]
+
+source_file="res://sound/arc degainage.mp3"
+dest_files=[ "res://.import/arc degainage.mp3-e04e6cae7c46d11116d8dda7b89cfbb6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

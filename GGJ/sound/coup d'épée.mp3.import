@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/coup d'épée.mp3-4e13472140c23e171ed3fc65222821b5.mp3str"
+
+[deps]
+
+source_file="res://sound/coup d'épée.mp3"
+dest_files=[ "res://.import/coup d'épée.mp3-4e13472140c23e171ed3fc65222821b5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
