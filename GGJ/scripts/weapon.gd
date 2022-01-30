@@ -10,6 +10,7 @@ var cooldown = 1
 var cooldown_counter = 0
 
 var bow_sounds = [preload("res://sound/arc1.mp3"), preload("res://sound/arc2.mp3")]
+var sword_sounds = [preload("res://sound/sword.mp3"), preload("res://sound/swordhit.mp3")]
 onready var sounder = $sound
 
 export var bulletSpeed = 1200
@@ -46,14 +47,19 @@ func _process(delta):
 				
 				var b = (self.global_position - mousePosition) / abs(self.global_position.distance_to(mousePosition))
 				
-				a1.position = self.global_position + (b*-100)
-				a2.position = self.global_position + (b*-140)
+				a1.position = self.global_position + (b*-140)
+				a2.position = self.global_position + (b*-180)
 				a1.timelife = 0.1
 				a2.timelife = 0.1
 				a1.alliance = "good"
 				a2.alliance = "good"
 				a1.damage = 15
 				a2.damage = 15
+				a1.visible = false
+				a2.visible = false
+				
+				sounder.stream = sword_sounds[randi()%len(sword_sounds)]
+				sounder.play()
 			
 			cooldown_counter = 0
 		

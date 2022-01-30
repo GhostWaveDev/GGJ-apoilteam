@@ -14,6 +14,7 @@ var player
 
 func _ready():
 	player = get_node(playerPath)
+	hurt = load("res://sound/blob2.mp3")
 
 func _physics_process(delta):
 	if state == 0:

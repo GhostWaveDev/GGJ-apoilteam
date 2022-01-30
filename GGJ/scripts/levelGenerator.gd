@@ -14,8 +14,9 @@ var mousePos = Vector2.ZERO
 export var wallPath = "res://"
 onready var wall = load(wallPath)
 
-export var slimePath = "res://"
-onready var slime = load(slimePath)
+export var slimePath1 = "res://"
+export var slimePath2 = "res://"
+onready var slimes = [load(slimePath1), load(slimePath2)]
 
 var wallSize = Vector2(20, 20)
 
@@ -36,8 +37,8 @@ func Generate(level_name):
 			if gridList[j][i] == 1:
 				InstiateWall(Vector2(i * wallSize.x, j * wallSize.y) + wallSize/2)
 
-			elif gridList[j][i] == 2:
-				InstiateSlime(Vector2(i * wallSize.x, j * wallSize.y) + wallSize/2)
+			elif gridList[j][i] > 1:
+				InstiateSlime(Vector2(i * wallSize.x, j * wallSize.y) + wallSize/2, gridList[j][i])
 
 func InstiateWall (pos):
 	var a = wall.instance()
@@ -47,12 +48,15 @@ func InstiateWall (pos):
 	
 	return a
 
-func InstiateSlime (pos):
-	var a = slime.instance()
+func InstiateSlime (pos, type):
+	var a = slimes[type - 2].instance()
 	a.position = pos
 	get_parent().add_child(a)
 	get_parent().nbEnemy += 1
-	print(get_parent().nbEnemy)
+	
+	if type - 2 == 1:
+		 a.playerPath = "../player"
+		 a._ready()
 	
 	return a
 

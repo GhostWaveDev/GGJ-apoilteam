@@ -14,8 +14,9 @@ var mousePos = Vector2.ZERO
 export var wallPath = "res://"
 onready var wall = load(wallPath)
 
-export var slimePath = "res://"
-onready var slime = load(slimePath)
+export var slimePath1 = "res://"
+export var slimePath2 = "res://"
+onready var slimes = [load(slimePath1), load(slimePath2)]
 
 var wallSize = Vector2(20, 20)
 
@@ -80,8 +81,8 @@ func ChangeObjOnClick (pos, mode):
 		objList[j][i] = InstiateWall(objPos)
 		gridList[j][i] = 1
 
-	elif gridList[j][i] == 0 and mode == 2 :
-		objList[j][i] = InstiateSlime(objPos)
+	elif gridList[j][i] == 0 and mode >= 2 :
+		objList[j][i] = InstiateSlime(objPos, mode)
 		gridList[j][i] = 2
 
 	elif gridList[j][i] != 0 and mode == 0 :
@@ -97,8 +98,8 @@ func InstiateWall (pos):
 	
 	return a
 
-func InstiateSlime (pos):
-	var a = slime.instance()
+func InstiateSlime (pos, type):
+	var a = slimes[type].instance()
 	a.position = pos
 	get_parent().add_child(a)
 	

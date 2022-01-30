@@ -13,6 +13,7 @@ onready var sounder = $sound
 var speed = Vector2.ZERO
 export var knockback = 400
 export var damage = 0
+var hurt = preload("res://sound/GGJ_sound_degat joueur cri.mp3")
 
 func Die(): 
 	queue_free()
@@ -21,6 +22,7 @@ func ChangeWorld() :
 	pass
 	
 func TakeDamage(damage):
+	play_sound(hurt)
 	health -= damage
 	var a = fxScene.instance()
 	
@@ -41,5 +43,6 @@ func Collision(obj):
 			TakeDamage(obj.damage)
 
 func play_sound(n):
-	sounder.stream = n
-	sounder.play()
+	if n != null:
+		sounder.stream = n
+		sounder.play()
