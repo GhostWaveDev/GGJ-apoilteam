@@ -9,7 +9,10 @@ var current = 1
 var cooldown = 1
 var cooldown_counter = 0
 
-export var bulletSpeed = 500
+var bow_sounds = [preload("res://sound/arc1.mp3"), preload("res://sound/arc2.mp3")]
+onready var sounder = $sound
+
+export var bulletSpeed = 1200
 
 func _process(delta):
 	mousePosition = get_global_mouse_position()
@@ -26,9 +29,13 @@ func _process(delta):
 				var b = (self.global_position - mousePosition) / abs(self.global_position.distance_to(mousePosition))
 				
 				a.position = self.global_position + (b*-100)
-				a.speed = Vector2(bulletSpeed, bulletSpeed) * -b 
+				a.speed = Vector2(bulletSpeed, bulletSpeed) * -b
+				a.sprite.rotation = a.speed.angle() + PI/2
 				
 				a.alliance = "good"
+				
+				sounder.stream = bow_sounds[randi()%len(bow_sounds)]
+				sounder.play()
 			
 			if current == 1:
 				var a1 = bullet.instance()

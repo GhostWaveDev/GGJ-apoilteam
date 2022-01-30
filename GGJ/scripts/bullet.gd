@@ -6,8 +6,12 @@ var speed = Vector2.ZERO
 var timelife = 12
 var timealive = 0
 var alliance = "good"
+var sprite
 
 var damage = 10
+
+func _ready():
+	sprite = $animatedSprite
 
 func _draw():
 	draw_rect(Rect2(0, 0, 10, 10), Color(255, 0, 0))
