@@ -5,3 +5,5 @@
 [node name="weapon" type="Node2D"]
 script = ExtResource( 1 )
 bulletPath = "res://scenes/bullet.tscn"
+
+[node name="sound" type="AudioStreamPlayer" parent="."]

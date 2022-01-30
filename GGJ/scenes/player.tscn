@@ -1,32 +1,50 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://sprites/player/animmm0000.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/healthBar.tscn" type="PackedScene" id=4]
-[ext_resource path="res://sprites/player/animmm0001.png" type="Texture" id=5]
-[ext_resource path="res://sprites/player/animmm0002.png" type="Texture" id=6]
-[ext_resource path="res://sprites/player/animmm0003.png" type="Texture" id=7]
-[ext_resource path="res://sprites/player/animmm0004.png" type="Texture" id=8]
-[ext_resource path="res://sprites/player/animmm0005.png" type="Texture" id=9]
-[ext_resource path="res://sprites/player/animmm0006.png" type="Texture" id=10]
-[ext_resource path="res://sprites/player/animmm0007.png" type="Texture" id=11]
-[ext_resource path="res://sprites/player/animmm0008.png" type="Texture" id=12]
-[ext_resource path="res://sprites/player/animmm0009.png" type="Texture" id=13]
-[ext_resource path="res://sprites/player/animmm0010.png" type="Texture" id=14]
-[ext_resource path="res://sprites/player/animmm0011.png" type="Texture" id=15]
+[ext_resource path="res://sprites/player/anim0005.png" type="Texture" id=5]
+[ext_resource path="res://sprites/player/anim0002.png" type="Texture" id=6]
+[ext_resource path="res://sprites/player/anim0003.png" type="Texture" id=7]
+[ext_resource path="res://sprites/player/anim0004.png" type="Texture" id=8]
+[ext_resource path="res://sprites/player/anim0012.png" type="Texture" id=9]
+[ext_resource path="res://sprites/player/anim0009.png" type="Texture" id=10]
+[ext_resource path="res://sprites/player/anim0011.png" type="Texture" id=11]
+[ext_resource path="res://sprites/player/anim0013.png" type="Texture" id=12]
+[ext_resource path="res://sprites/player/anim0014.png" type="Texture" id=13]
+[ext_resource path="res://sprites/player/anim0015.png" type="Texture" id=14]
+[ext_resource path="res://sprites/player/anim0010.png" type="Texture" id=15]
+[ext_resource path="res://sprites/player/anim0007.png" type="Texture" id=16]
+[ext_resource path="res://sprites/player/anim0019.png" type="Texture" id=17]
+[ext_resource path="res://sprites/player/anim0006.png" type="Texture" id=18]
+[ext_resource path="res://sprites/player/anim0008.png" type="Texture" id=19]
+[ext_resource path="res://sprites/player/anim0018.png" type="Texture" id=20]
+[ext_resource path="res://sprites/player/anim0020.png" type="Texture" id=21]
+[ext_resource path="res://sprites/player/anim0021.png" type="Texture" id=22]
+[ext_resource path="res://sprites/player/anim0022.png" type="Texture" id=23]
+[ext_resource path="res://sprites/player/anim0001.png" type="Texture" id=24]
+[ext_resource path="res://sprites/player/anim0000.png" type="Texture" id=25]
+[ext_resource path="res://sprites/player/anim0016.png" type="Texture" id=26]
+[ext_resource path="res://sprites/player/anim0017.png" type="Texture" id=27]
+[ext_resource path="res://sprites/player/anim0023.png" type="Texture" id=28]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "left",
+"name": "right",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
-"name": "right",
+"name": "left",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 25 ), ExtResource( 24 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 28 ) ],
+"loop": true,
+"name": "down",
+"speed": 20.0
 }, {
 "frames": [ ExtResource( 1 ) ],
 "loop": true,
@@ -37,11 +55,6 @@ animations = [ {
 "loop": true,
 "name": "idle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ) ],
-"loop": true,
-"name": "down",
-"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -55,7 +68,7 @@ accel = Vector2( 5000, 5000 )
 friction = Vector2( 0.8, 0.8 )
 
 [node name="animatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.3, 0.3 )
+scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 2 )
 animation = "idle"
 playing = true
