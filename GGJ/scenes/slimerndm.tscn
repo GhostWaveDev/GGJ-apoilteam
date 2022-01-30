@@ -57,7 +57,7 @@ scale = Vector2( 0.25, 0.25 )
 z_index = 0
 frames = SubResource( 2 )
 animation = "jump"
-frame = 12
+frame = 6
 playing = true
 
 [node name="collisionShape" parent="." index="1"]
