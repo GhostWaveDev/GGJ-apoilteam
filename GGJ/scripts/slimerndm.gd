@@ -18,7 +18,7 @@ func _physics_process(delta):
 		compt = randf()
 		theta = randf() * 2 * PI
 		sprite.animation = "jump"
-		collider1.position.y = collider1.position.linear_interpolate(Vector2(0, 10*abs(sin(3))), 6*compt).y
+		#collider1.position.y = collider1.position.linear_interpolate(Vector2(0, 10*abs(sin(3))), 6*compt).y
 	
 	compt += delta
 	
