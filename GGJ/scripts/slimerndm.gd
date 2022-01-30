@@ -6,16 +6,19 @@ var jumpTime = 0
 export var jumpAccel = Vector2(900, 900)
 var jumpFriction = 0.9
 var theta
+onready var collider1 = $collisionShape
+onready var collider2 = $hitbox/collisionShape
 var dir = Vector2.ZERO
 var jumpSound = preload("res://sound/blob.mp3")
 
 func _physics_process(delta):
 	if compt > jumpCooldown:
+		play_sound(jumpSound)
 		jumpTime = 1.8
-		compt = 0
+		compt = randf()
 		theta = randf() * 2 * PI
 		sprite.animation = "jump"
-		play_sound(jumpSound)
+		collider1.position.y = collider1.position.linear_interpolate(Vector2(0, 10*abs(sin(3))), 6*compt).y
 	
 	compt += delta
 	
@@ -30,6 +33,3 @@ func _physics_process(delta):
 	speed *= jumpFriction
 	move_and_slide(speed)
 	update()
-
-func _draw():
-	draw_rect(Rect2(0,0, 10, 10), Color.red)

@@ -13,9 +13,6 @@ var damage = 10
 func _ready():
 	sprite = $animatedSprite
 
-func _draw():
-	draw_rect(Rect2(0, 0, 10, 10), Color(255, 0, 0))
-
 func _process(delta):
 	position += speed * delta
 	
@@ -28,4 +25,8 @@ func _on_hitbox_body_entered(body):
 	if body.alliance != self.alliance:
 		body.Collision(self)
 		self.speed = Vector2.ZERO
+		if body is Enemy :
+			get_parent().remove_child(self)
+			body.add_child(self)
+			self.position = Vector2.ZERO + Vector2(rand_range(-60,60), rand_range(-20,20))
 		$hitbox.queue_free()

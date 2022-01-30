@@ -45,6 +45,3 @@ func _physics_process(delta):
 
 func _process(delta):
 	$canvasLayer/healthBar.health = health
-
-func _draw():
-	draw_rect(Rect2(0,0, 10, 10), Color.red)

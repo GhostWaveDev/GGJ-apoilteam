@@ -65,7 +65,3 @@ func _physics_process(delta):
 			compt = 0
 			jumpCooldown = 2
 			jumpTime = 0
-
-
-func _draw():
-	draw_rect(Rect2(0,0, 10, 10), Color.red)

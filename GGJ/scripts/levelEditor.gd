@@ -14,9 +14,8 @@ var mousePos = Vector2.ZERO
 export var wallPath = "res://"
 onready var wall = load(wallPath)
 
-export var slimePath1 = "res://"
-export var slimePath2 = "res://"
-onready var slimes = [load(slimePath1), load(slimePath2)]
+export var slimePath = "res://"
+onready var slime = load(slimePath)
 
 var wallSize = Vector2(20, 20)
 
@@ -40,9 +39,25 @@ func _process(delta):
 			mousePos = get_global_mouse_position()
 			ChangeObjOnClick(mousePos, 0)
 			
-		if Input.is_action_just_pressed("slime") :
+		if Input.is_action_just_pressed("slime1") :
 			mousePos = get_global_mouse_position()
 			ChangeObjOnClick(mousePos, 2)
+			
+		if Input.is_action_just_pressed("slime2") :
+			mousePos = get_global_mouse_position()
+			ChangeObjOnClick(mousePos, 3)
+			
+		if Input.is_action_just_pressed("slime3") :
+			mousePos = get_global_mouse_position()
+			ChangeObjOnClick(mousePos, 4)
+			
+		if Input.is_action_just_pressed("slime4") :
+			mousePos = get_global_mouse_position()
+			ChangeObjOnClick(mousePos, 5)
+			
+		if Input.is_action_just_pressed("slime5") :
+			mousePos = get_global_mouse_position()
+			ChangeObjOnClick(mousePos, 6)
 			
 		if Input.is_action_just_pressed("save"):
 			saveGrid()
@@ -57,13 +72,6 @@ func Generate(level_name):
 #			gridList.append(1)
 #		else:
 #			gridList.append(0)
-	
-	for a in objList:
-		for b in a:
-			b.queue_free()
-	
-	gridList = []
-	objList = []
 	
 	for i in range(spritesInCol):
 		var row = []
@@ -88,9 +96,25 @@ func ChangeObjOnClick (pos, mode):
 		objList[j][i] = InstiateWall(objPos)
 		gridList[j][i] = 1
 
-	elif gridList[j][i] == 0 and mode >= 2 :
-		objList[j][i] = InstiateSlime(objPos, mode)
+	elif gridList[j][i] == 0 and mode == 2 :
+		objList[j][i] = InstiateSlime(objPos)
 		gridList[j][i] = 2
+		
+	elif gridList[j][i] == 0 and mode == 3 :
+		objList[j][i] = InstiateSlime(objPos)
+		gridList[j][i] = 3
+		
+	elif gridList[j][i] == 0 and mode == 4 :
+		objList[j][i] = InstiateSlime(objPos)
+		gridList[j][i] = 4
+		
+	elif gridList[j][i] == 0 and mode == 5 :
+		objList[j][i] = InstiateSlime(objPos)
+		gridList[j][i] = 5
+		
+	elif gridList[j][i] == 0 and mode == 6 :
+		objList[j][i] = InstiateSlime(objPos)
+		gridList[j][i] = 6
 
 	elif gridList[j][i] != 0 and mode == 0 :
 		gridList[j][i] = 0
@@ -105,8 +129,8 @@ func InstiateWall (pos):
 	
 	return a
 
-func InstiateSlime (pos, type):
-	var a = slimes[type].instance()
+func InstiateSlime (pos):
+	var a = slime.instance()
 	a.position = pos
 	get_parent().add_child(a)
 	
@@ -119,6 +143,7 @@ func saveGrid():
 			content += str(gridList[t][s])
 
 	var file = File.new()
-	file.open("res://Levels.dat", File.WRITE)
+	file.open("res://Levels.dat", File.READ_WRITE)
+	file.seek_end()
 	file.store_string(content + "\n")
 	file.close()
