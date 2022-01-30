@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/arc1.mp3-2e93991dcb2051803cd9d607c5581ad2.mp3str"
+
+[deps]
+
+source_file="res://sound/arc1.mp3"
+dest_files=[ "res://.import/arc1.mp3-2e93991dcb2051803cd9d607c5581ad2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
