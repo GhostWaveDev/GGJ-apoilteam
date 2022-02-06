@@ -9,7 +9,7 @@ var theta
 var dir = Vector2.ZERO
 var jumpSound = preload("res://sound/blob.mp3")
 
-export var playerPath = "./"
+export var playerPath = "../player"
 var player
 
 func _ready():
@@ -17,11 +17,12 @@ func _ready():
 	hurt = load("res://sound/blob2.mp3")
 
 func _physics_process(delta):
+	z_indexS()
 	if state == 0:
 		sprite.scale = Vector2(0.25, 0.25)
 		if compt > jumpCooldown:
 			jumpTime = 1.8
-			compt = 0
+			compt = randf()
 			theta = -self.global_position.angle_to_point(player.global_position)
 			sprite.animation = "jump"
 			play_sound(jumpSound)
@@ -39,8 +40,6 @@ func _physics_process(delta):
 		move_and_slide(speed)
 	
 	
-	update()
-	print(state)
 	if Input.is_action_just_pressed("right_click"):
 		
 		if state == 0:
@@ -65,3 +64,4 @@ func _physics_process(delta):
 			compt = 0
 			jumpCooldown = 2
 			jumpTime = 0
+

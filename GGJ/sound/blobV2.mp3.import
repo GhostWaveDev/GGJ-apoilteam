@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/blobV2.mp3-c0c675ab56a4d1ce30a4eb5babcd9774.mp3str"
+
+[deps]
+
+source_file="res://sound/blobV2.mp3"
+dest_files=[ "res://.import/blobV2.mp3-c0c675ab56a4d1ce30a4eb5babcd9774.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/statueTransform.mp3-089a7a5e13e8d40c9f3119e7d4fbe9fd.mp3str"
+
+[deps]
+
+source_file="res://sound/statueTransform.mp3"
+dest_files=[ "res://.import/statueTransform.mp3-089a7a5e13e8d40c9f3119e7d4fbe9fd.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

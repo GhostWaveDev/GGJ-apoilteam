@@ -19,10 +19,20 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/bullet.gd"
 }, {
+"base": "Node2D",
+"class": "Door",
+"language": "GDScript",
+"path": "res://scripts/door.gd"
+}, {
 "base": "Actor",
 "class": "Enemy",
 "language": "GDScript",
 "path": "res://scripts/enemy.gd"
+}, {
+"base": "Node2D",
+"class": "LevelEditor",
+"language": "GDScript",
+"path": "res://scripts/levelEditor.gd"
 }, {
 "base": "Node2D",
 "class": "LevelGenerator",
@@ -42,7 +52,9 @@ _global_script_classes=[ {
 _global_script_class_icons={
 "Actor": "",
 "Bullet": "",
+"Door": "",
 "Enemy": "",
+"LevelEditor": "",
 "LevelGenerator": "",
 "Player": "",
 "Wall": ""
@@ -51,7 +63,8 @@ _global_script_class_icons={
 [application]
 
 config/name="GGJ"
-run/main_scene="res://scenes/main.tscn"
+run/main_scene="res://scenes/menu.tscn"
+boot_splash/image="res://sprites/treebw.png"
 config/icon="res://icon.png"
 
 [display]
@@ -59,6 +72,14 @@ config/icon="res://icon.png"
 window/size/width=1920
 window/size/height=1080
 window/size/fullscreen=true
+
+[global]
+
+scene=false
+
+[gui]
+
+common/snap_controls_to_pixels=false
 
 [input]
 
@@ -110,5 +131,9 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
+2d/snapping/use_gpu_pixel_snap=true
+quality/filters/use_nearest_mipmap_filter=true
 environment/default_clear_color=Color( 0, 0, 0, 1 )
+quality/filters/msaa=4
+quality/filters/use_fxaa=true
 environment/default_environment="res://default_env.tres"

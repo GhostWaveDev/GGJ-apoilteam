@@ -1,60 +1,122 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=73 format=2]
 
-[ext_resource path="res://sprites/player/animmm0000.png" type="Texture" id=1]
+[ext_resource path="res://sprites/player/down1_3.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player.gd" type="Script" id=2]
 [ext_resource path="res://scenes/weapon.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/healthBar.tscn" type="PackedScene" id=4]
-[ext_resource path="res://sprites/player/anim0005.png" type="Texture" id=5]
-[ext_resource path="res://sprites/player/anim0002.png" type="Texture" id=6]
-[ext_resource path="res://sprites/player/anim0003.png" type="Texture" id=7]
-[ext_resource path="res://sprites/player/anim0004.png" type="Texture" id=8]
-[ext_resource path="res://sprites/player/anim0012.png" type="Texture" id=9]
-[ext_resource path="res://sprites/player/anim0009.png" type="Texture" id=10]
-[ext_resource path="res://sprites/player/anim0011.png" type="Texture" id=11]
-[ext_resource path="res://sprites/player/anim0013.png" type="Texture" id=12]
-[ext_resource path="res://sprites/player/anim0014.png" type="Texture" id=13]
-[ext_resource path="res://sprites/player/anim0015.png" type="Texture" id=14]
-[ext_resource path="res://sprites/player/anim0010.png" type="Texture" id=15]
-[ext_resource path="res://sprites/player/anim0007.png" type="Texture" id=16]
-[ext_resource path="res://sprites/player/anim0019.png" type="Texture" id=17]
-[ext_resource path="res://sprites/player/anim0006.png" type="Texture" id=18]
-[ext_resource path="res://sprites/player/anim0008.png" type="Texture" id=19]
-[ext_resource path="res://sprites/player/anim0018.png" type="Texture" id=20]
-[ext_resource path="res://sprites/player/anim0020.png" type="Texture" id=21]
-[ext_resource path="res://sprites/player/anim0021.png" type="Texture" id=22]
-[ext_resource path="res://sprites/player/anim0022.png" type="Texture" id=23]
-[ext_resource path="res://sprites/player/anim0001.png" type="Texture" id=24]
-[ext_resource path="res://sprites/player/anim0000.png" type="Texture" id=25]
-[ext_resource path="res://sprites/player/anim0016.png" type="Texture" id=26]
-[ext_resource path="res://sprites/player/anim0017.png" type="Texture" id=27]
-[ext_resource path="res://sprites/player/anim0023.png" type="Texture" id=28]
+[ext_resource path="res://sprites/player/down0_1.png" type="Texture" id=5]
+[ext_resource path="res://sprites/player/down0_8.png" type="Texture" id=6]
+[ext_resource path="res://sprites/player/down0_4.png" type="Texture" id=7]
+[ext_resource path="res://sprites/player/attackr1_0v2.png" type="Texture" id=8]
+[ext_resource path="res://sprites/player/down0_2.png" type="Texture" id=9]
+[ext_resource path="res://sprites/player/down0_9.png" type="Texture" id=10]
+[ext_resource path="res://sprites/player/down0_3.png" type="Texture" id=11]
+[ext_resource path="res://sprites/player/down0_16.png" type="Texture" id=12]
+[ext_resource path="res://sprites/player/down0_0.png" type="Texture" id=13]
+[ext_resource path="res://sprites/player/down0_17.png" type="Texture" id=14]
+[ext_resource path="res://sprites/player/down0_19.png" type="Texture" id=15]
+[ext_resource path="res://sprites/player/down0_20.png" type="Texture" id=16]
+[ext_resource path="res://sprites/player/down0_6.png" type="Texture" id=17]
+[ext_resource path="res://sprites/player/down0_15.png" type="Texture" id=18]
+[ext_resource path="res://sprites/player/down0_7.png" type="Texture" id=19]
+[ext_resource path="res://sprites/player/attackr0_0v2.png" type="Texture" id=20]
+[ext_resource path="res://sprites/player/down0_5.png" type="Texture" id=21]
+[ext_resource path="res://sprites/player/down0_11.png" type="Texture" id=22]
+[ext_resource path="res://sprites/player/down0_14.png" type="Texture" id=23]
+[ext_resource path="res://sprites/player/down0_10.png" type="Texture" id=24]
+[ext_resource path="res://sprites/player/down0_12.png" type="Texture" id=25]
+[ext_resource path="res://sprites/player/down0_13.png" type="Texture" id=26]
+[ext_resource path="res://sprites/player/down0_21.png" type="Texture" id=27]
+[ext_resource path="res://sprites/player/down0_18.png" type="Texture" id=28]
+[ext_resource path="res://sprites/player/down0_22.png" type="Texture" id=29]
+[ext_resource path="res://sprites/player/down0_23.png" type="Texture" id=30]
+[ext_resource path="res://sprites/player/down1_0.png" type="Texture" id=31]
+[ext_resource path="res://sprites/player/down1_1.png" type="Texture" id=32]
+[ext_resource path="res://sprites/player/down1_2.png" type="Texture" id=33]
+[ext_resource path="res://sprites/player/up1_6.png" type="Texture" id=34]
+[ext_resource path="res://sprites/player/up1_7.png" type="Texture" id=35]
+[ext_resource path="res://sprites/player/down1_15.png" type="Texture" id=36]
+[ext_resource path="res://sprites/player/down1_6.png" type="Texture" id=37]
+[ext_resource path="res://sprites/player/down1_13.png" type="Texture" id=38]
+[ext_resource path="res://sprites/player/profil1_2.png" type="Texture" id=39]
+[ext_resource path="res://sprites/player/down1_16.png" type="Texture" id=40]
+[ext_resource path="res://sprites/player/down1_7.png" type="Texture" id=41]
+[ext_resource path="res://sprites/player/down1_17.png" type="Texture" id=42]
+[ext_resource path="res://sprites/player/profil0_1.png" type="Texture" id=43]
+[ext_resource path="res://sprites/player/profil0_2.png" type="Texture" id=44]
+[ext_resource path="res://sprites/player/down1_14.png" type="Texture" id=45]
+[ext_resource path="res://sprites/player/up0_0.png" type="Texture" id=46]
+[ext_resource path="res://sprites/player/up0_1.png" type="Texture" id=47]
+[ext_resource path="res://sprites/player/profil1_0.png" type="Texture" id=48]
+[ext_resource path="res://sprites/player/up0_5.png" type="Texture" id=49]
+[ext_resource path="res://sprites/player/up0_7.png" type="Texture" id=50]
+[ext_resource path="res://sprites/player/down1_10.png" type="Texture" id=51]
+[ext_resource path="res://sprites/player/up1_0.png" type="Texture" id=52]
+[ext_resource path="res://sprites/player/down1_9.png" type="Texture" id=53]
+[ext_resource path="res://sprites/player/up1_1.png" type="Texture" id=54]
+[ext_resource path="res://sprites/player/down1_11.png" type="Texture" id=55]
+[ext_resource path="res://sprites/player/up1_2.png" type="Texture" id=56]
+[ext_resource path="res://sprites/player/up0_6.png" type="Texture" id=57]
+[ext_resource path="res://sprites/player/up0_2.png" type="Texture" id=58]
+[ext_resource path="res://sprites/player/profil1_1.png" type="Texture" id=59]
+[ext_resource path="res://sprites/player/down1_5.png" type="Texture" id=60]
+[ext_resource path="res://sprites/player/up0_3.png" type="Texture" id=61]
+[ext_resource path="res://sprites/player/up1_3.png" type="Texture" id=62]
+[ext_resource path="res://sprites/player/up1_4.png" type="Texture" id=63]
+[ext_resource path="res://sprites/player/up1_5.png" type="Texture" id=64]
+[ext_resource path="res://sprites/player/up0_4.png" type="Texture" id=65]
+[ext_resource path="res://sprites/player/down1_18.png" type="Texture" id=66]
+[ext_resource path="res://sprites/player/profil0_0.png" type="Texture" id=67]
+[ext_resource path="res://sprites/player/down1_4.png" type="Texture" id=68]
+[ext_resource path="res://sprites/player/down1_8.png" type="Texture" id=69]
+[ext_resource path="res://sprites/player/down1_12.png" type="Texture" id=70]
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 52 ), ExtResource( 54 ), ExtResource( 56 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 34 ), ExtResource( 35 ) ],
 "loop": true,
-"name": "left",
-"speed": 5.0
+"name": "up1",
+"speed": 40.0
 }, {
-"frames": [ ExtResource( 1 ) ],
+"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 58 ), ExtResource( 61 ), ExtResource( 65 ), ExtResource( 49 ), ExtResource( 57 ), ExtResource( 50 ) ],
 "loop": true,
-"name": "right",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 1 ) ],
-"loop": true,
-"name": "idle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 25 ), ExtResource( 24 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 5 ), ExtResource( 18 ), ExtResource( 16 ), ExtResource( 19 ), ExtResource( 10 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 9 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 20 ), ExtResource( 17 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 28 ) ],
-"loop": true,
-"name": "down",
+"name": "up0",
 "speed": 20.0
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 5 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ), ExtResource( 21 ), ExtResource( 17 ), ExtResource( 19 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 24 ), ExtResource( 22 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 23 ), ExtResource( 18 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 28 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 27 ), ExtResource( 29 ), ExtResource( 30 ) ],
+"loop": true,
+"name": "down0",
+"speed": 40.0
+}, {
+"frames": [ ExtResource( 38 ) ],
+"loop": true,
+"name": "idle1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ) ],
+"loop": true,
+"name": "idle0",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 1 ), ExtResource( 68 ), ExtResource( 60 ), ExtResource( 37 ), ExtResource( 41 ), ExtResource( 69 ), ExtResource( 53 ), ExtResource( 51 ), ExtResource( 55 ), ExtResource( 70 ), ExtResource( 38 ), ExtResource( 45 ), ExtResource( 36 ), ExtResource( 40 ), ExtResource( 42 ), ExtResource( 66 ) ],
+"loop": true,
+"name": "down1",
+"speed": 40.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 59 ), ExtResource( 39 ) ],
+"loop": true,
+"name": "right1",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 20 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "attackl0",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 67 ), ExtResource( 43 ), ExtResource( 44 ) ],
+"loop": true,
+"name": "right0",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -64,13 +126,14 @@ extents = Vector2( 35, 80 )
 collision/safe_margin = 0.5
 script = ExtResource( 2 )
 alliance = "good"
+truc = 3
 accel = Vector2( 5000, 5000 )
 friction = Vector2( 0.8, 0.8 )
 
 [node name="animatedSprite" type="AnimatedSprite" parent="."]
-scale = Vector2( 0.4, 0.4 )
+scale = Vector2( 0.07, 0.07 )
 frames = SubResource( 2 )
-animation = "idle"
+animation = "idle1"
 playing = true
 
 [node name="collisionShape2D" type="CollisionShape2D" parent="."]
@@ -78,13 +141,17 @@ shape = SubResource( 1 )
 
 [node name="weapon" parent="." instance=ExtResource( 3 )]
 
-[node name="camera" type="Camera2D" parent="."]
-current = true
-smoothing_enabled = true
-smoothing_speed = 15.0
-
 [node name="canvasLayer" type="CanvasLayer" parent="."]
 
 [node name="healthBar" parent="canvasLayer" instance=ExtResource( 4 )]
 
 [node name="sound" type="AudioStreamPlayer" parent="."]
+
+[node name="camera" type="Camera2D" parent="."]
+current = true
+smoothing_enabled = true
+smoothing_speed = 15.0
+
+[connection signal="animation_finished" from="animatedSprite" to="." method="_on_animatedSprite_animation_finished"]
+[connection signal="arrow" from="weapon" to="." method="_on_weapon_arrow"]
+[connection signal="sword" from="weapon" to="." method="_on_weapon_sword"]
