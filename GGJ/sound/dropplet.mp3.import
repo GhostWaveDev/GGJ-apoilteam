@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/dropplet.mp3-d75a6d0c7deac849ef95492f5a40d66e.mp3str"
+
+[deps]
+
+source_file="res://sound/dropplet.mp3"
+dest_files=[ "res://.import/dropplet.mp3-d75a6d0c7deac849ef95492f5a40d66e.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

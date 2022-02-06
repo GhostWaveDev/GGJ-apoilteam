@@ -2,10 +2,13 @@ extends Actor
 class_name Enemy
 
 var state = 0
+var dead = false
 
 func Die(): 
-	get_parent().nbEnemy -= 1
-	queue_free()
+	if !dead:
+		get_parent().nbEnemy -= 1
+		queue_free()
+		dead = true
 
 func _ready():
 	var damage = 50

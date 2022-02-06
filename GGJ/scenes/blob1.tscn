@@ -1,0 +1,69 @@
+[gd_scene load_steps=37 format=2]
+
+[ext_resource path="res://scenes/enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://sprites/enemies/blob1/blob1_16.png" type="Texture" id=2]
+[ext_resource path="res://sprites/enemies/blob1/blob1_18.png" type="Texture" id=3]
+[ext_resource path="res://sprites/enemies/blob1/blob1_6.png" type="Texture" id=4]
+[ext_resource path="res://sprites/enemies/blob1/blob1_11.png" type="Texture" id=5]
+[ext_resource path="res://sprites/enemies/blob1/blob1_22.png" type="Texture" id=6]
+[ext_resource path="res://sprites/enemies/blob1/blob1_24.png" type="Texture" id=7]
+[ext_resource path="res://sprites/enemies/blob1/blob1_25.png" type="Texture" id=8]
+[ext_resource path="res://sprites/enemies/blob1/blob1_17.png" type="Texture" id=9]
+[ext_resource path="res://sprites/enemies/blob1/blob1_28.png" type="Texture" id=10]
+[ext_resource path="res://sprites/enemies/blob1/blob1_13.png" type="Texture" id=11]
+[ext_resource path="res://sprites/enemies/blob1/blob1_26.png" type="Texture" id=12]
+[ext_resource path="res://sprites/enemies/blob1/blob1_23.png" type="Texture" id=13]
+[ext_resource path="res://sprites/enemies/blob1/blob1_30.png" type="Texture" id=14]
+[ext_resource path="res://sprites/enemies/blob1/blob1_1.png" type="Texture" id=15]
+[ext_resource path="res://sprites/enemies/blob1/blob1_19.png" type="Texture" id=16]
+[ext_resource path="res://sprites/enemies/blob1/blob1_27.png" type="Texture" id=17]
+[ext_resource path="res://sprites/enemies/blob1/blob1_0.png" type="Texture" id=18]
+[ext_resource path="res://sprites/enemies/blob1/blob1_2.png" type="Texture" id=19]
+[ext_resource path="res://sprites/enemies/blob1/blob1_8.png" type="Texture" id=20]
+[ext_resource path="res://sprites/enemies/blob1/blob1_14.png" type="Texture" id=21]
+[ext_resource path="res://sprites/enemies/blob1/blob1_9.png" type="Texture" id=22]
+[ext_resource path="res://sprites/enemies/blob1/blob1_15.png" type="Texture" id=23]
+[ext_resource path="res://sprites/enemies/blob1/blob1_21.png" type="Texture" id=24]
+[ext_resource path="res://scripts/blob1.gd" type="Script" id=25]
+[ext_resource path="res://sprites/enemies/blob1/blob1_3.png" type="Texture" id=26]
+[ext_resource path="res://sprites/enemies/blob1/blob1_29.png" type="Texture" id=27]
+[ext_resource path="res://sprites/enemies/blob1/blob1_7.png" type="Texture" id=28]
+[ext_resource path="res://sprites/enemies/blob1/blob1_12.png" type="Texture" id=29]
+[ext_resource path="res://sprites/enemies/blob1/blob1_4.png" type="Texture" id=30]
+[ext_resource path="res://sprites/enemies/blob1/blob1_20.png" type="Texture" id=31]
+[ext_resource path="res://sprites/enemies/blob1/blob1_5.png" type="Texture" id=32]
+[ext_resource path="res://sprites/enemies/blob1/blob1_10.png" type="Texture" id=33]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 18 ), ExtResource( 15 ), ExtResource( 19 ), ExtResource( 26 ), ExtResource( 30 ), ExtResource( 32 ), ExtResource( 4 ), ExtResource( 28 ), ExtResource( 20 ), ExtResource( 22 ), ExtResource( 33 ), ExtResource( 5 ), ExtResource( 29 ), ExtResource( 11 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 2 ), ExtResource( 9 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 31 ), ExtResource( 24 ), ExtResource( 6 ), ExtResource( 13 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 12 ), ExtResource( 17 ), ExtResource( 10 ), ExtResource( 27 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "idle",
+"speed": 19.0
+} ]
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 140.0
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 160.0
+
+[node name="blob1" instance=ExtResource( 1 )]
+script = ExtResource( 25 )
+health = 100
+alliance = "bad"
+truc = 0
+knockback = 400
+damage = 10
+
+[node name="animatedSprite" parent="." index="0"]
+frames = SubResource( 1 )
+animation = "idle"
+frame = 28
+playing = true
+
+[node name="collisionShape" parent="." index="1"]
+shape = SubResource( 4 )
+
+[node name="collisionShape" parent="hitbox" index="0"]
+shape = SubResource( 3 )

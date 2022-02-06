@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/ochestral.mp3-6f2d9dbd08ca8e6e9e833492c77bae44.mp3str"
+
+[deps]
+
+source_file="res://music/ochestral.mp3"
+dest_files=[ "res://.import/ochestral.mp3-6f2d9dbd08ca8e6e9e833492c77bae44.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

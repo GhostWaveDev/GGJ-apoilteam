@@ -7,3 +7,5 @@ script = ExtResource( 1 )
 wallPath = "res://scenes/wall.tscn"
 slimePath1 = "res://scenes/slimerndm.tscn"
 slimePath2 = "res://scenes/slimetwd.tscn"
+blobPath1 = "res://scenes/blob1.tscn"
+bossPath1 = "res://scenes/boss.tscn"

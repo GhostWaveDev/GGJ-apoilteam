@@ -16,7 +16,9 @@ onready var wall = load(wallPath)
 
 export var slimePath1 = "res://"
 export var slimePath2 = "res://"
-onready var slimes = [load(slimePath1), load(slimePath2)]
+export var blobPath1 = "res://"
+export var bossPath1 = "res://"
+onready var slimes = [load(slimePath1), load(slimePath2), load(blobPath1), load(bossPath1)]
 
 var wallSize = Vector2(20, 20)
 
@@ -68,7 +70,7 @@ func InstiateSlime (pos, type):
 	call_deferred("add_child_fast", a)
 	get_parent().nbEnemy += 1
 	
-	if type - 2 == 1:
+	if type - 2 > 1:
 		 a.playerPath = "../player"
 		 a._ready()
 	objList.append(a)
