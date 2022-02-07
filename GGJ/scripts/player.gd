@@ -2,12 +2,12 @@ extends Actor
 
 class_name Player
 
-export var accel = Vector2(400,400)
+export var accel = Vector2(350,300)
 var input = Vector2.ZERO
 var mode = 0
 var sword = false
 
-export var friction = Vector2(0.92,0.92)
+export var friction = Vector2(0.94,0.94)
 
 func _ready():
 	knockback = 2300
@@ -44,15 +44,20 @@ func _physics_process(delta):
 		sprite.scale = Vector2(0.18, 0.18)
 		changeAnimation("up" + str(mode))
 	elif input.y > 0:
-		sprite.scale = Vector2(0.4, 0.4)
+		sprite.scale = Vector2(0.42, 0.42)
 		changeAnimation("down" + str(mode))
 	
 	if input == Vector2.ZERO and !sword:
-		sprite.scale = Vector2(0.4, 0.4)
+		sprite.scale = Vector2(0.3, 0.3)
+		sprite.transform = sprite.transform.interpolate_with(Transform2D(0, sprite.position), 10*delta)
 		changeAnimation("idle" + str(mode))
 	
 	sprite.speed_scale = (abs(speed.x) + abs(speed.y))/420
 	if sword: sprite.speed_scale = 1
+	
+	if input.x != 0 :
+		var angle = atan(input.y/input.x)
+		sprite.transform = sprite.transform.interpolate_with(Transform2D(angle, sprite.position), 0.3 * delta)
 	
 	speed += accel * delta * input
 	speed *= friction
